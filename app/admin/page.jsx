@@ -1,21 +1,41 @@
 import NavAdmin from "@/components/NavAdmin";
 import TabelProduk from "@/components/TabelProduk";
 import Tombol from "@/components/Tombol";
-import { produkContoh } from "@/lib/data-contoh";
+import { buatSupabaseServer } from "@/lib/supabase";
 
-export default function HalamanAdmin() {
-  // US-07 (bonus): daftar produk masih memakai data contoh, belum dari database.
-  const daftarProduk = produkContoh;
+export default async function HalamanAdmin() {
+  const supabase = buatSupabaseServer();
+  const { data: daftarProduk, error } = await supabase
+    .from("produk")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   return (
     <div className="flex flex-col gap-6 py-8">
       <NavAdmin />
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-extrabold">Produk</h1>
-        {/* US-08 (bonus): tambah produk */}
         <Tombol href="/admin/produk/baru">Tambah produk</Tombol>
       </div>
-      <TabelProduk daftarProduk={daftarProduk} />
+
+      {error ? (
+        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+          <p className="font-semibold">Gagal memuat daftar produk</p>
+          <p className="mt-1">{error.message}</p>
+        </div>
+      ) : daftarProduk?.length === 0 ? (
+        <div className="rounded-2xl border border-garis bg-permukaan/50 p-8 text-center">
+          <p className="font-semibold text-teks">Belum ada produk</p>
+          <p className="mt-1 text-sm text-teks-lembut">
+            Mulai tambahkan produk pertama toko Anda sekarang.
+          </p>
+          <div className="mt-4">
+            <Tombol href="/admin/produk/baru">Tambah produk sekarang</Tombol>
+          </div>
+        </div>
+      ) : (
+        <TabelProduk daftarProduk={daftarProduk || []} />
+      )}
     </div>
   );
 }

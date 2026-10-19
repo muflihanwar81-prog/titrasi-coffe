@@ -54,12 +54,17 @@ export default function FilterKatalog({ daftarKategori = [] }) {
     <div className="flex flex-col gap-3 rounded-2xl border border-garis bg-permukaan/40 p-4">
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
         <div className="relative flex-1">
+          <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-teks-lembut">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </span>
           <input
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Cari nama produk..."
-            className="w-full rounded-lg border border-garis bg-latar px-3.5 py-2 text-sm text-teks placeholder:text-teks-lembut focus:border-utama focus:outline-none"
+            placeholder="Cari mobil impian (Porsche, Ferrari, Nismo, dll)..."
+            className="w-full rounded-xl border border-garis bg-latar/80 pl-10 pr-3.5 py-2.5 text-sm text-teks placeholder:text-teks-lembut/70 focus:border-utama focus:outline-none transition-colors"
           />
         </div>
 
@@ -115,3 +120,4 @@ export default function FilterKatalog({ daftarKategori = [] }) {
     </div>
   );
 }
+

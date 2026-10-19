@@ -19,7 +19,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#1f6b4f",
+  themeColor: "#e11d48",
 };
 
 export default function RootLayout({ children }) {
@@ -30,13 +30,14 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
         />
       </head>
-      <body className="flex min-h-screen flex-col font-sans antialiased">
+      <body className="relative flex min-h-screen flex-col font-sans antialiased selection:bg-utama selection:text-white">
+        <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(225,29,72,0.12),transparent_70%)]" />
         <PwaRegistrar />
         <Header />
-        <main className="mx-auto w-full max-w-5xl flex-1 px-4">{children}</main>
+        <main className="relative z-10 mx-auto w-full max-w-5xl flex-1 px-4">{children}</main>
         <Footer />
       </body>
     </html>

@@ -18,3 +18,4 @@ update public.produk set stok = 30, varian = 'Sedang, Sangat Pedas' where nama l
 update public.produk set stok = 10, varian = 'Toples 250g, Toples 500g' where nama like '%Nastar%';
 update public.produk set stok = 8, varian = 'Natural, Cokelat' where nama like '%Tas%';
 update public.produk set stok = 12, varian = '2 meter, 2.5 meter' where nama like '%Batik%';
+

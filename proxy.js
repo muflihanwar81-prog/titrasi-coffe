@@ -1,6 +1,16 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
+function bersihkanUrl(url) {
+  if (!url) return "";
+  return url.trim().replace(/^["']|["']$/g, "").replace(/\/rest\/v1\/?$/, "").replace(/\/+$/, "");
+}
+
+function bersihkanKey(key) {
+  if (!key) return "";
+  return key.trim().replace(/^["']|["']$/g, "");
+}
+
 export async function proxy(request) {
   const { pathname } = request.nextUrl;
 
@@ -14,8 +24,8 @@ export async function proxy(request) {
     const response = NextResponse.next();
 
     const supabase = createServerClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_PUBLISHABLE_KEY,
+      bersihkanUrl(process.env.SUPABASE_URL),
+      bersihkanKey(process.env.SUPABASE_PUBLISHABLE_KEY),
       {
         cookies: {
           getAll() {

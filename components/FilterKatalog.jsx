@@ -63,7 +63,7 @@ export default function FilterKatalog({ daftarKategori = [] }) {
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Cari mobil impian (Porsche, Ferrari, Nismo, dll)..."
+            placeholder="Cari menu (Espresso, Latte, Matcha, dll)..."
             className="w-full rounded-xl border border-garis bg-latar/80 pl-10 pr-3.5 py-2.5 text-sm text-teks placeholder:text-teks-lembut/70 focus:border-utama focus:outline-none transition-colors"
           />
         </div>

@@ -36,7 +36,7 @@ export default function OpsiPesanProduk({ produk }) {
 
   // Susun pesan WhatsApp otomatis
   const varianTeks = varianDipilih ? ` (Varian: ${varianDipilih})` : "";
-  const pesan = `Halo Showroom ${toko.nama}, saya tertarik dengan unit *${produk.nama}*${varianTeks} seharga ${formatRupiah(subtotal)}. Mohon info ketersediaan unit dan jadwal konsultasi / test drive.`;
+  const pesan = `Halo ${toko.nama}, saya ingin memesan *${produk.nama}*${varianTeks} sebanyak ${jumlah} pcs seharga ${formatRupiah(subtotal)}. Mohon info ketersediaan dan estimasi waktu penyajian.`;
   const urlWhatsApp = `https://wa.me/${toko.nomorWhatsApp}?text=${encodeURIComponent(pesan)}`;
 
   return (
@@ -67,7 +67,7 @@ export default function OpsiPesanProduk({ produk }) {
       {/* Pilihan jumlah dan stok */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <label className="text-sm font-semibold text-teks">Jumlah Unit:</label>
+          <label className="text-sm font-semibold text-teks">Jumlah:</label>
           {adaStok && (
             <span
               className={`text-xs font-semibold ${
@@ -136,7 +136,7 @@ export default function OpsiPesanProduk({ produk }) {
           className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-utama px-5 py-3.5 font-bold text-white shadow-lg shadow-utama/25 hover:bg-utama-gelap transition-all"
         >
           <span>💬</span>
-          <span>Konsultasi &amp; Pesan via WhatsApp</span>
+          <span>Pesan via WhatsApp</span>
         </a>
       )}
     </div>

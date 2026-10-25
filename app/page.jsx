@@ -31,11 +31,11 @@ export default async function HalamanKatalog({ searchParams }) {
       <section className="relative py-10 sm:py-16">
         <div className="inline-flex items-center gap-2 rounded-full border border-utama/30 bg-utama/10 px-3 py-1 text-xs font-bold text-utama mb-4">
           <span className="h-2 w-2 rounded-full bg-utama animate-pulse" />
-          EXCLUSIVE SUPERCAR SHOWROOM &bull; BATAM
+          SPECIALTY COFFEE SHOP &bull; BATAM
         </div>
 
         <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl text-teks">
-          Koleksi Mobil Sport & <span className="text-utama">Supercar Eksklusif</span> di Batam.
+          Nikmati <span className="text-utama">Kopi Specialty</span> & Manual Brew Terbaik di Batam.
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-teks-lembut sm:text-lg">
@@ -45,13 +45,13 @@ export default async function HalamanKatalog({ searchParams }) {
         {/* Feature Badges */}
         <div className="mt-6 flex flex-wrap gap-2.5 sm:gap-3 text-xs font-semibold text-teks-lembut">
           <div className="flex items-center gap-2 rounded-xl border border-garis bg-permukaan/50 px-3.5 py-2">
-            <span className="text-utama font-bold">✓</span> Unit Terawat &amp; Siap Kirim
+            <span className="text-utama font-bold">✓</span> Biji Kopi Single Origin
           </div>
           <div className="flex items-center gap-2 rounded-xl border border-garis bg-permukaan/50 px-3.5 py-2">
-            <span className="text-utama font-bold">✓</span> Harga Khusus FTZ Batam
+            <span className="text-utama font-bold">✓</span> Freshly Brewed
           </div>
           <div className="flex items-center gap-2 rounded-xl border border-garis bg-permukaan/50 px-3.5 py-2">
-            <span className="text-utama font-bold">✓</span> Test Drive &amp; Konsultasi WhatsApp
+            <span className="text-utama font-bold">✓</span> Pesan via WhatsApp
           </div>
         </div>
 
@@ -69,12 +69,12 @@ export default async function HalamanKatalog({ searchParams }) {
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-garis/60 pb-3">
             <div>
               <h2 id="judul-produk" className="text-xl font-black text-teks sm:text-2xl">
-                Unit Tersedia di Showroom
+                Menu Tersedia
               </h2>
-              <p className="text-xs text-teks-lembut">Pilihan supercar &amp; mobil sport siap dipesan</p>
+              <p className="text-xs text-teks-lembut">Pilihan kopi, minuman &amp; snack terbaik kami</p>
             </div>
             <span className="rounded-full border border-garis bg-permukaan/60 px-3 py-1 text-xs font-bold text-teks-lembut">
-              {produkTersaring.length} Unit
+              {produkTersaring.length} Menu
             </span>
           </div>
 
@@ -86,10 +86,10 @@ export default async function HalamanKatalog({ searchParams }) {
             Gagal memuat produk: {error.message}
           </p>
         ) : semuaProduk?.length === 0 ? (
-          <p className="text-teks-lembut">Belum ada unit mobil tersedia.</p>
+          <p className="text-teks-lembut">Belum ada menu tersedia.</p>
         ) : produkTersaring.length === 0 ? (
           <div className="rounded-2xl border border-garis bg-permukaan/30 p-10 text-center">
-            <p className="font-bold text-teks">Tidak ada unit mobil yang cocok</p>
+            <p className="font-bold text-teks">Tidak ada menu yang cocok</p>
             <p className="mt-1 text-sm text-teks-lembut">
               Coba gunakan kata kunci pencarian atau kategori lain.
             </p>

@@ -13,9 +13,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z" />
-              <circle cx="7.5" cy="14.5" r="1.5" />
-              <circle cx="16.5" cy="14.5" r="1.5" />
+              <path d="M2 21h18v-2H2v2zm2-4h14l1-7H3l1 7zm15-9H3V6h16v2zm-1-4H4V2h14v2z" />
             </svg>
           </div>
           <div className="flex flex-col">
@@ -23,7 +21,7 @@ export default function Header() {
               {toko.nama}
             </span>
             <span className="text-[10px] font-bold tracking-widest text-teks-lembut uppercase">
-              Supercar Showroom
+              Specialty Coffee
             </span>
           </div>
         </Link>
@@ -36,7 +34,7 @@ export default function Header() {
             className="inline-flex items-center gap-2 rounded-xl border border-utama/40 bg-utama/10 px-3.5 py-1.5 text-xs font-bold text-utama transition-all hover:bg-utama hover:text-white"
           >
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="hidden sm:inline">Hubungi Showroom</span>
+            <span className="hidden sm:inline">Hubungi Kami</span>
             <span className="sm:hidden">WhatsApp</span>
           </a>
         </div>
